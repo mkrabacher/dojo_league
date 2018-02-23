@@ -1,0 +1,8 @@
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\bin\Debug\netcoreapp1.1\dojo_league.deps.json
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\bin\Debug\netcoreapp1.1\dojo_league.runtimeconfig.json
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\bin\Debug\netcoreapp1.1\dojo_league.runtimeconfig.dev.json
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\bin\Debug\netcoreapp1.1\dojo_league.dll
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\bin\Debug\netcoreapp1.1\dojo_league.pdb
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\obj\Debug\netcoreapp1.1\dojo_league.AssemblyInfo.cs
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\obj\Debug\netcoreapp1.1\dojo_league.dll
+C:\Users\Wamsutta\Desktop\Coding\CodingDojo\netCore\ORMs\dojo_league\obj\Debug\netcoreapp1.1\dojo_league.pdb

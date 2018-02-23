@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Dojo";
+}
+@model dojo_league.Models.Dojo
+
+<h1>Name: @Model.Name</h1>
+<h4>Dojo Location: @Model.Location</h4>
+<h4>Description: @Model.Description</h4>
+
+<div style="display: inline-block;">
+    <h1>Current Members</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="min-width: 200px">Ninja</th>
+                <th style="min-width: 200px">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach(var ninja in ViewBag.MemberNinjas)
+                {
+                    <tr>
+                        <td><a href="/Ninjas/@ninja.Id">@ninja.Name</a></td>
+                        <td><a href="/Banish/@Model.Id/@ninja.Id">Banish!</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div style="display: inline-block;">
+    <h1>Ronin Ninjas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="min-width: 200px">Ninja</th>
+                <th style="min-width: 200px">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach(var ninja in ViewBag.RoninNinjas)
+                {
+                    <tr>
+                        <td><a href="/Ninjas/@ninja.Id">@ninja.Name</a></td>
+                        <td><a href="/Recruit/@Model.Id/@ninja.Id">Recruit</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

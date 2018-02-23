@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using dojo_league.Models
+@model dojo_league.Models.Ninja
+
+<div style="vertical-align:top; display:inline-block; border-right:3px solid black; margin: 20px 100px 0 0; padding-right: 100px;">
+    <h1>Registered Ninjas</h1>
+    <table>
+        <thead>
+            <th>Ninja Name</th>
+            <th>Ninja Dojo</th>
+        </thead>
+        <tbody>
+            <tr>
+                @{
+                    foreach(var ninja in ViewBag.Ninjas)
+                    {
+                        <tr>
+                            <td><a href="/Ninjas/@ninja.Id">@ninja.Name</a></td>
+                            <td>
+                                @{
+                                    if(ninja.Dojo.Id == 0)
+                                    {
+                                        <p>Ronin</p>
+                                    }else{
+                                        <a href="/Dojos/@ninja.Dojo.Id">@ninja.Dojo.Name</a>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="display:inline-block">
+    <h1>Register A Ninja</h1>
+    <form asp-controller="Ninjas" asp-action="NewNinja" method="post">
+        <label asp-for="Name"></label>:
+        <span asp-validation-for="Name"></span><br>
+        <input asp-for="Name"/><br><br>
+        <label asp-for="Level"></label>:
+        <span asp-validation-for="Level"></span><br>
+        <input type="number" asp-for="Level"/><br><br>
+        <label asp-for="Dojo"></label>:
+        <span asp-validation-for="DojoId"></span><br>
+        <select asp-for="DojoId">
+            @{
+                foreach(var dojo in ViewBag.Dojos)
+                {
+                    <option value=@dojo.Id>@dojo.Name</option>
+                }
+            }
+        </select><br><br>
+        <label asp-for="Description"></label>:
+        <span asp-validation-for="Description"></span><br>
+        <textarea asp-for="Description" placeholder="add description..."></textarea><br><br>
+        <button type="submit">Create new Ninja</button>
+    </form>    
+</div>

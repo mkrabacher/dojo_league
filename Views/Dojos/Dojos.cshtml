@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Dojos";
+}
+@using dojo_league.Models
+@model dojo_league.Models.Dojo
+
+<div style="vertical-align:top; display:inline-block; border-right:3px solid black; margin: 20px 100px 0 0; padding-right: 100px;">
+    <h1>Registered Dojos</h1>
+    <table>
+        <thead>
+            <th>Dojo Name</th>
+        </thead>
+        <tbody>
+            <tr>
+                @{
+                    for(int i = 1; i < ViewBag.Dojos.Count; i++)
+                    {
+                        <tr>
+                            <td><a href="/Dojos/@ViewBag.Dojos[i].Id">@ViewBag.Dojos[i].Name</a></td>
+                        </tr>
+                    }
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="display:inline-block">
+    <h1>Register A Dojo</h1>
+    <form asp-controller="Dojos" asp-action="NewDojo" method="post">
+        <label asp-for="Name"></label>:
+        <span asp-validation-for="Name"></span><br>
+        <input asp-for="Name"/><br><br>
+        <label asp-for="Location"></label>:
+        <span asp-validation-for="Location"></span><br>
+        <input asp-for="Location"/><br><br>
+        <label asp-for="Description"></label>:
+        <span asp-validation-for="Description"></span><br>
+        <textarea asp-for="Description" placeholder="add description..."></textarea><br><br>
+        <button type="submit">Create new Dojo</button>
+    </form>    
+</div>
